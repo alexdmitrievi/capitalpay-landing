@@ -3,222 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapitalPay - Анкета команды</title>
+    <title>Анкета CapitalPay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --tally-primary: #4A6CF7;
-            --tally-border: #E5E7EB;
-            --tally-text: #111827;
-            --tally-label: #374151;
-            --tally-hint: #6B7280;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            color: var(--tally-text);
-            background: #F9FAFB;
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            color: #0A1E3D;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
-        
-        .tally-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 24px;
+        .container {
+            max-width: 800px;
+            margin: auto;
         }
-        
-        .tally-header {
+        header {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 30px;
         }
-        
-        .tally-logo-placeholder {
-            width: 120px;
-            height: 40px;
-            margin: 0 auto 16px;
-            background-color: #f0f0f0;
+        header img {
+            max-width: 200px;
+        }
+        h1, h2 {
+            font-weight: 600;
+        }
+        form {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 14px;
+            flex-direction: column;
         }
-        
-        .tally-form-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 0 8px;
-            color: var(--tally-text);
+        label {
+            margin: 15px 0 5px;
+            font-weight: 600;
         }
-        
-        .tally-form-description {
-            font-size: 16px;
-            color: var(--tally-hint);
-            margin: 0;
+        input, select, textarea {
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
         }
-        
-        .tally-form {
-            background: white;
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        textarea {
+            resize: vertical;
         }
-        
-        .tally-field {
-            margin-bottom: 24px;
-        }
-        
-        .tally-label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--tally-label);
-        }
-        
-        .tally-required {
-            color: #EF4444;
-        }
-        
-        .tally-input, .tally-select, .tally-textarea {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid var(--tally-border);
-            border-radius: 6px;
-            font-size: 14px;
-            line-height: 1.5;
-            transition: border-color 0.2s;
-        }
-        
-        .tally-input:focus, .tally-select:focus, .tally-textarea:focus {
-            outline: none;
-            border-color: var(--tally-primary);
-            box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
-        }
-        
-        .tally-hint {
-            font-size: 13px;
-            color: var(--tally-hint);
-            margin-top: 6px;
-        }
-        
-        .tally-button {
-            width: 100%;
-            background-color: var(--tally-primary);
-            color: white;
+        .submit-btn {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #0A1E3D;
+            color: #fff;
             border: none;
-            border-radius: 6px;
-            padding: 12px 16px;
+            border-radius: 5px;
             font-size: 16px;
-            font-weight: 500;
             cursor: pointer;
-            transition: background-color 0.2s;
         }
-        
-        .tally-button:hover {
-            background-color: #3B5BEC;
-        }
-        
-        .tally-captcha {
-            background: #F3F4F6;
-            border-radius: 6px;
-            padding: 16px;
-            margin: 24px 0;
-            text-align: center;
-        }
-        
-        .tally-captcha-title {
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 0 8px;
-        }
-        
-        .tally-captcha-box {
-            height: 80px;
-            background: #E5E7EB;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 12px;
-            color: var(--tally-hint);
-        }
-        
-        .tally-captcha-input {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid var(--tally-border);
-            border-radius: 4px;
-            font-size: 14px;
+        .submit-btn:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <div class="tally-container">
-        <div class="tally-header">
-            <!-- Место для вашего логотипа -->
-            <div class="tally-logo-placeholder">CAPITALPAY LOGO</div>
-            <h1 class="tally-form-title">Анкета команды</h1>
-            <p class="tally-form-description">Пожалуйста, укажите всю запрашиваемую информацию — это займёт всего несколько минут.</p>
-        </div>
-        
-        <form class="tally-form">
-            <!-- Название команды -->
-            <div class="tally-field">
-                <label class="tally-label">Название команды</label>
-                <input type="text" class="tally-input" placeholder="Латиницей, пример: toptrader777">
-            </div>
-            
-            <!-- Город -->
-            <div class="tally-field">
-                <label class="tally-label">Город (или регион) базирования <span class="tally-required">*</span></label>
-                <input type="text" class="tally-input" required>
-            </div>
-            
-            <!-- Размер команды -->
-            <div class="tally-field">
-                <label class="tally-label">Размер команды <span class="tally-required">*</span></label>
-                <input type="number" class="tally-input" required>
-                <p class="tally-hint">Сколько человек работает в вашей команде</p>
-            </div>
-            
-            <!-- Опыт работы -->
-            <div class="tally-field">
-                <label class="tally-label">Опыт работы в процессинге <span class="tally-required">*</span></label>
-                <select class="tally-select" required>
-                    <option value="">Выберите вариант</option>
-                    <option value="less3">Менее 3 месяцев</option>
-                    <option value="6months">Около 6 месяцев</option>
-                    <option value="1year">Около года</option>
-                    <option value="more1">Больше года</option>
-                </select>
-            </div>
-            
-            <!-- Другие поля формы -->
-            <!-- ... (все остальные поля из вашего ТЗ) ... -->
-            
-            <!-- Капча -->
-            <div class="tally-captcha">
-                <h3 class="tally-captcha-title">Проверка безопасности</h3>
-                <p>Пожалуйста, подтвердите, что вы не робот</p>
-                <div class="tally-captcha-box">
-                    [CAPTCHA PLACEHOLDER]
-                </div>
-                <input type="text" class="tally-captcha-input" placeholder="Введите код с картинки">
-            </div>
-            
-            <!-- Кнопка отправки -->
-            <button type="submit" class="tally-button">Отправить анкету</button>
+    <div class="container">
+        <header>
+            <!-- Место для картинки или гифки -->
+            <img src="logo-placeholder.png" alt="CapitalPay">
+        </header>
+
+        <h1>Анкета CapitalPay</h1>
+        <p>Пожалуйста, укажите всю запрашиваемую информацию — это займёт всего несколько минут. Ваши ответы помогут нам лучше понять ваши возможности и быстрее включить вас в работу.</p>
+
+        <form>
+            <label>Название команды</label>
+            <input type="text" placeholder="Пример: toptrader777">
+
+            <label>Город (или регион) базирования *</label>
+            <input type="text" required>
+
+            <label>Размер команды *</label>
+            <input type="text" placeholder="Сколько человек работает в вашей команде" required>
+
+            <label>Опыт работы в процессинге *</label>
+            <select required>
+                <option>Менее 3 месяцев</option>
+                <option>Около 6 месяцев</option>
+                <option>Около года</option>
+                <option>Больше года</option>
+            </select>
+
+            <label>Опыт работы на других площадках</label>
+            <textarea placeholder="Перечислите через запятую платформы/сервисы"></textarea>
+
+            <label>Команда работает 24/7 *</label>
+            <select required>
+                <option>Да</option>
+                <option>Нет</option>
+            </select>
+
+            <label>Способы, которыми вы обрабатываете депозиты *</label>
+            <select required>
+                <option>Классический способ</option>
+                <option>Ферма</option>
+                <option>Трансграничные переводы</option>
+            </select>
+
+            <label>Методы, которыми вы принимаете депозиты *</label>
+            <select required>
+                <option>СБП</option>
+                <option>С карты на карту</option>
+                <option>Номер счёта</option>
+            </select>
+
+            <label>Банки, которые используете в работе *</label>
+            <textarea placeholder="Перечислите через запятую"></textarea>
+
+            <label>Количество доступных реквизитов под депозиты *</label>
+            <textarea placeholder="Сколько в среднем реквизитов будет находиться в работе на площадке?" required></textarea>
+
+            <label>Сколько готовы обрабатывать на вход *</label>
+            <textarea placeholder="Среднесуточный объем в рублях (RUB)" required></textarea>
+
+            <label>Способы, которыми вы обрабатываете выплаты *</label>
+            <select required>
+                <option>Классический способ</option>
+                <option>Белые треугольники</option>
+                <option>Не работаю на выплаты</option>
+            </select>
+
+            <label>Оборотные средства, которые можете выделить *</label>
+            <textarea placeholder="Сумма в USDT в сутки" required></textarea>
+
+            <label>Когда сможете приступить к работе? *</label>
+            <textarea placeholder="Насколько быстро после одобрения" required></textarea>
+
+            <label>С какими ГЕО, кроме РФ, вы работаете? *</label>
+            <textarea placeholder="Перечислите страны/регионы" required></textarea>
+
+            <label>Telegram-юзернейм владельца команды *</label>
+            <input type="text" placeholder="@username" required>
+
+            <label>Telegram-юзернейм сотрудников команды *</label>
+            <input type="text" placeholder="@username1, @username2" required>
+
+            <label>Дополнительная информация (если есть) *</label>
+            <textarea placeholder="Например: лимиты по реквизитам или необходимость автоматизации" required></textarea>
+
+            <label>Captcha *</label>
+            <input type="text" placeholder="Введите код с картинки" required>
+
+            <button class="submit-btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
         </form>
     </div>
-
-    <script>
-        // Обработка отправки формы
-        document.querySelector('.tally-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Форма отправлена!');
-        });
-    </script>
 </body>
 </html>
+
