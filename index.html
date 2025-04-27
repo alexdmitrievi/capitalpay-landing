@@ -81,19 +81,39 @@
             <input type="text" placeholder="Сколько человек работает в вашей команде" required>
 
             <label>Опыт работы в процессинге *</label>
-            <input type="text" placeholder="Менее 3 месяцев, Около 6 месяцев, Около года, Больше года" required>
+            <select required>
+                <option value="" disabled selected>Выберите</option>
+                <option>Менее 3 месяцев</option>
+                <option>Около 6 месяцев</option>
+                <option>Около года</option>
+                <option>Больше года</option>
+            </select>
 
             <label>Опыт работы на других площадках</label>
             <textarea placeholder="Перечислите через запятую платформы/сервисы" required></textarea>
 
             <label>Команда работает 24/7 *</label>
-            <input type="text" placeholder="Да, Нет" required>
+            <select required>
+                <option value="" disabled selected>Выберите</option>
+                <option>Да</option>
+                <option>Нет</option>
+            </select>
 
             <label>Способы, которыми вы обрабатываете депозиты *</label>
-            <input type="text" placeholder="Классический способ, Ферма, Трансграничные переводы" required>
+            <select required>
+                <option value="" disabled selected>Выберите</option>
+                <option>Классический способ</option>
+                <option>Ферма</option>
+                <option>Трансграничные переводы</option>
+            </select>
 
             <label>Методы, которыми вы принимаете депозиты *</label>
-            <input type="text" placeholder="СБП, С карты на карту, Номер счёта" required>
+            <select required>
+                <option value="" disabled selected>Выберите</option>
+                <option>СБП</option>
+                <option>С карты на карту</option>
+                <option>Номер счёта</option>
+            </select>
 
             <label>Банки, которые используете в работе *</label>
             <textarea placeholder="Перечислите через запятую" required></textarea>
@@ -105,7 +125,12 @@
             <textarea placeholder="Среднесуточный объем в рублях (RUB)" required></textarea>
 
             <label>Способы, которыми вы обрабатываете выплаты *</label>
-            <input type="text" placeholder="Классический способ, Белые треугольники, Не работаю на выплаты" required>
+            <select required>
+                <option value="" disabled selected>Выберите</option>
+                <option>Классический способ</option>
+                <option>Белые треугольники</option>
+                <option>Не работаю на выплаты</option>
+            </select>
 
             <label>Оборотные средства, которые можете выделить *</label>
             <textarea placeholder="Сумма в USDT в сутки" required></textarea>
