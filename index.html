@@ -41,9 +41,14 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f5f5f5;
+            width: 100%;
+            box-sizing: border-box;
         }
         textarea {
             resize: vertical;
+        }
+        .hidden {
+            display: none;
         }
         .submit-btn {
             margin-top: 20px;
@@ -57,6 +62,11 @@
         }
         .submit-btn:hover {
             opacity: 0.9;
+        }
+        @media (max-width: 600px) {
+            input, select, textarea {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -81,39 +91,47 @@
             <input type="text" placeholder="Сколько человек работает в вашей команде" required>
 
             <label>Опыт работы в процессинге *</label>
-            <select required>
+            <select id="processingExperience" required onchange="toggleCustomInput(this, 'customProcessingExperience')">
                 <option value="" disabled selected>Выберите</option>
                 <option>Менее 3 месяцев</option>
                 <option>Около 6 месяцев</option>
                 <option>Около года</option>
                 <option>Больше года</option>
+                <option value="custom">Свой вариант...</option>
             </select>
+            <input type="text" id="customProcessingExperience" class="hidden" placeholder="Введите свой вариант">
 
             <label>Опыт работы на других площадках</label>
             <textarea placeholder="Перечислите через запятую платформы/сервисы" required></textarea>
 
             <label>Команда работает 24/7 *</label>
-            <select required>
+            <select id="work247" required onchange="toggleCustomInput(this, 'customWork247')">
                 <option value="" disabled selected>Выберите</option>
                 <option>Да</option>
                 <option>Нет</option>
+                <option value="custom">Свой вариант...</option>
             </select>
+            <input type="text" id="customWork247" class="hidden" placeholder="Введите свой вариант">
 
             <label>Способы, которыми вы обрабатываете депозиты *</label>
-            <select required>
+            <select id="depositMethods" required onchange="toggleCustomInput(this, 'customDepositMethods')">
                 <option value="" disabled selected>Выберите</option>
                 <option>Классический способ</option>
                 <option>Ферма</option>
                 <option>Трансграничные переводы</option>
+                <option value="custom">Свой вариант...</option>
             </select>
+            <input type="text" id="customDepositMethods" class="hidden" placeholder="Введите свой вариант">
 
             <label>Методы, которыми вы принимаете депозиты *</label>
-            <select required>
+            <select id="acceptMethods" required onchange="toggleCustomInput(this, 'customAcceptMethods')">
                 <option value="" disabled selected>Выберите</option>
                 <option>СБП</option>
                 <option>С карты на карту</option>
                 <option>Номер счёта</option>
+                <option value="custom">Свой вариант...</option>
             </select>
+            <input type="text" id="customAcceptMethods" class="hidden" placeholder="Введите свой вариант">
 
             <label>Банки, которые используете в работе *</label>
             <textarea placeholder="Перечислите через запятую" required></textarea>
@@ -125,12 +143,14 @@
             <textarea placeholder="Среднесуточный объем в рублях (RUB)" required></textarea>
 
             <label>Способы, которыми вы обрабатываете выплаты *</label>
-            <select required>
+            <select id="withdrawMethods" required onchange="toggleCustomInput(this, 'customWithdrawMethods')">
                 <option value="" disabled selected>Выберите</option>
                 <option>Классический способ</option>
                 <option>Белые треугольники</option>
                 <option>Не работаю на выплаты</option>
+                <option value="custom">Свой вариант...</option>
             </select>
+            <input type="text" id="customWithdrawMethods" class="hidden" placeholder="Введите свой вариант">
 
             <label>Оборотные средства, которые можете выделить *</label>
             <textarea placeholder="Сумма в USDT в сутки" required></textarea>
@@ -153,6 +173,18 @@
             <button class="submit-btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
         </form>
     </div>
+
+    <script>
+        function toggleCustomInput(selectElement, inputId) {
+            const input = document.getElementById(inputId);
+            if (selectElement.value === 'custom') {
+                input.classList.remove('hidden');
+                input.required = true;
+            } else {
+                input.classList.add('hidden');
+                input.required = false;
+            }
+        }
+    </script>
 </body>
 </html>
-
