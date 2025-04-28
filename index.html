@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анкета CapitalPay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="max-width:600px;margin:auto;padding:20px;font-family:'Montserrat',sans-serif;">
+  <header style="text-align:center;margin-bottom:10px;">
+    <img src="logo_final_clean.svg" alt="CapitalPay" style="width:500px;max-width:100%;display:block;margin:0 auto;">
+  </header>
+
+  <h1 style="text-align:center;margin:20px 0;">Анкета</h1>
+
+  <form action="send.php" method="POST" style="display:flex;flex-direction:column;gap:15px;">
+    <input type="text" name="team_name" placeholder="Название команды" required>
+    <input type="text" name="region" placeholder="Город или регион базирования" required>
+    <input type="text" name="team_size" placeholder="Размер команды" required>
+    <input type="text" name="processing_experience" placeholder="Опыт работы в процессинге" required>
+    <textarea name="platforms" placeholder="Опыт работы на других площадках" required></textarea>
+    <input type="text" name="work_247" placeholder="Команда работает 24/7?" required>
+    <input type="text" name="deposit_methods" placeholder="Способы обработки депозитов" required>
+    <input type="text" name="accept_methods" placeholder="Методы приёма депозитов" required>
+    <textarea name="banks" placeholder="Банки, которые используете" required></textarea>
+    <textarea name="requisites" placeholder="Количество реквизитов" required></textarea>
+    <textarea name="entry_volume" placeholder="Сколько готовы обрабатывать на вход" required></textarea>
+    <input type="text" name="withdraw_methods" placeholder="Способы обработки выплат" required>
+    <textarea name="turnover" placeholder="Оборотные средства (в USDT в сутки)" required></textarea>
+    <textarea name="start_time" placeholder="Когда готовы приступить к работе?" required></textarea>
+    <textarea name="geo" placeholder="ГЕО кроме РФ" required></textarea>
+    <input type="text" name="owner_telegram" placeholder="Telegram-юзернейм владельца" required>
+    <input type="text" name="team_telegram" placeholder="Telegram-юзернеймы сотрудников" required>
+    <textarea name="additional_info" placeholder="Дополнительная информация" required></textarea>
+    <button type="submit" style="padding:15px;background-color:#0A1E3D;color:white;border:none;border-radius:5px;font-size:18px;cursor:pointer;">ОТПРАВИТЬ ЗАЯВКУ</button>
+  </form>
+</div>
+</body>
+</html>
