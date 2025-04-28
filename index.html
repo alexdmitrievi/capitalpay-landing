@@ -42,6 +42,12 @@
     label {
       font-weight: 600;
     }
+    small {
+      display: block;
+      margin: 5px 0;
+      color: #555;
+      font-size: 13px;
+    }
     input, select, textarea {
       padding: 12px;
       font-family: 'Montserrat', sans-serif;
@@ -55,6 +61,9 @@
     textarea {
       resize: vertical;
       min-height: 100px;
+    }
+    .hidden {
+      display: none;
     }
     .submit-btn {
       margin-top: 10px;
@@ -88,28 +97,115 @@
   <h1>Анкета</h1>
 
   <form>
-    <input type="text" name="team_name" placeholder="Название команды" required>
-    <input type="text" name="region" placeholder="Город или регион базирования" required>
-    <input type="text" name="team_size" placeholder="Размер команды" required>
-    <input type="text" name="processing_experience" placeholder="Опыт работы в процессинге" required>
-    <textarea name="platforms" placeholder="Опыт работы на других площадках" required></textarea>
-    <input type="text" name="work_247" placeholder="Команда работает 24/7?" required>
-    <input type="text" name="deposit_methods" placeholder="Способы обработки депозитов" required>
-    <input type="text" name="accept_methods" placeholder="Методы приёма депозитов" required>
-    <textarea name="banks" placeholder="Банки, которые используете" required></textarea>
-    <textarea name="requisites" placeholder="Количество доступных реквизитов" required></textarea>
-    <textarea name="entry_volume" placeholder="Сколько готовы обрабатывать на вход" required></textarea>
-    <input type="text" name="withdraw_methods" placeholder="Способы обработки выплат" required>
-    <textarea name="turnover" placeholder="Оборотные средства (USDT в сутки)" required></textarea>
-    <textarea name="start_time" placeholder="Когда готовы приступить к работе?" required></textarea>
-    <textarea name="geo" placeholder="ГЕО кроме РФ" required></textarea>
-    <input type="text" name="owner_telegram" placeholder="Telegram-юзернейм владельца" required>
-    <input type="text" name="team_telegram" placeholder="Telegram-юзернеймы сотрудников" required>
-    <textarea name="additional_info" placeholder="Дополнительная информация" required></textarea>
+    <label>Название команды</label>
+    <input type="text" placeholder="Пример: toptrader777" required>
+
+    <label>Город (или регион) базирования *</label>
+    <input type="text" placeholder="Ваш город или регион" required>
+
+    <label>Размер команды *</label>
+    <input type="text" placeholder="Количество участников" required>
+
+    <label>Опыт работы в процессинге *</label>
+    <select onchange="toggleCustomInput(this, 'customExperience')" required>
+      <option value="" disabled selected>Выберите</option>
+      <option>Менее 3 месяцев</option>
+      <option>Около 6 месяцев</option>
+      <option>Около года</option>
+      <option>Больше года</option>
+      <option value="custom">Свой вариант...</option>
+    </select>
+    <input id="customExperience" class="hidden" type="text" placeholder="Введите свой вариант">
+
+    <label>Опыт работы на других площадках</label>
+    <small>Перечислите платформы через запятую.</small>
+    <textarea placeholder="Пример: Binance, OKX, Exmo" required></textarea>
+
+    <label>Команда работает 24/7 *</label>
+    <select onchange="toggleCustomInput(this, 'customWork')" required>
+      <option value="" disabled selected>Выберите</option>
+      <option>Да</option>
+      <option>Нет</option>
+      <option value="custom">Свой вариант...</option>
+    </select>
+    <input id="customWork" class="hidden" type="text" placeholder="Введите свой вариант">
+
+    <label>Способы обработки депозитов *</label>
+    <select onchange="toggleCustomInput(this, 'customDeposit')" required>
+      <option value="" disabled selected>Выберите</option>
+      <option>Классический способ</option>
+      <option>Ферма</option>
+      <option>Трансграничные переводы</option>
+      <option value="custom">Свой вариант...</option>
+    </select>
+    <input id="customDeposit" class="hidden" type="text" placeholder="Введите свой вариант">
+
+    <label>Методы приёма депозитов *</label>
+    <select onchange="toggleCustomInput(this, 'customAccept')" required>
+      <option value="" disabled selected>Выберите</option>
+      <option>СБП</option>
+      <option>С карты на карту</option>
+      <option>Номер счёта</option>
+      <option value="custom">Свой вариант...</option>
+    </select>
+    <input id="customAccept" class="hidden" type="text" placeholder="Введите свой вариант">
+
+    <label>Банки, которые используете *</label>
+    <small>Перечислите банки через запятую.</small>
+    <textarea placeholder="Пример: Сбербанк, Тинькофф, ВТБ" required></textarea>
+
+    <label>Количество доступных реквизитов *</label>
+    <textarea placeholder="Сколько реквизитов в среднем в работе?" required></textarea>
+
+    <label>Сколько готовы обрабатывать на вход *</label>
+    <textarea placeholder="Среднесуточный объем в рублях" required></textarea>
+
+    <label>Способы обработки выплат *</label>
+    <select onchange="toggleCustomInput(this, 'customWithdraw')" required>
+      <option value="" disabled selected>Выберите</option>
+      <option>Классический способ</option>
+      <option>Белые треугольники</option>
+      <option>Не работаю на выплаты</option>
+      <option value="custom">Свой вариант...</option>
+    </select>
+    <input id="customWithdraw" class="hidden" type="text" placeholder="Введите свой вариант">
+
+    <label>Оборотные средства *</label>
+    <textarea placeholder="Укажите сумму в USDT в сутки" required></textarea>
+
+    <label>Когда готовы приступить к работе *</label>
+    <textarea placeholder="Например: сразу после одобрения" required></textarea>
+
+    <label>ГЕО кроме РФ *</label>
+    <textarea placeholder="Страны/регионы" required></textarea>
+
+    <label>Telegram-юзернейм владельца *</label>
+    <input type="text" placeholder="@example" required>
+
+    <label>Telegram-юзернеймы сотрудников *</label>
+    <input type="text" placeholder="@user1, @user2" required>
+
+    <label>Дополнительная информация</label>
+    <small>Укажите особенности работы, ограничения и пожелания.</small>
+    <textarea placeholder="Ваш текст..." required></textarea>
 
     <button class="submit-btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
   </form>
 </div>
+
+<script>
+function toggleCustomInput(selectElement, inputId) {
+  const input = document.getElementById(inputId);
+  if (selectElement.value === 'custom') {
+    input.classList.remove('hidden');
+    input.required = true;
+  } else {
+    input.classList.add('hidden');
+    input.required = false;
+    input.value = '';
+  }
+}
+</script>
 
 </body>
 </html>
