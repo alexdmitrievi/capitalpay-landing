@@ -36,9 +36,14 @@
     }
     p.subtitle {
       text-align: center;
-      font-size: 18px;
-      color: #333;
+      font-size: 20px;
+      font-weight: 500;
+      color: #0A1E3D;
+      background-color: #f1f5f9;
+      padding: 10px;
+      border-radius: 8px;
       margin-bottom: 30px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
     }
     form {
       display: flex;
@@ -63,21 +68,18 @@
       background-color: #f9f9f9;
       width: 100%;
       box-sizing: border-box;
-      height: 48px; /* Одинаковая высота для всех */
+      height: 48px;
     }
-    /* Дополнительно только для select */
     select {
-      padding-right: 30px; /* Отступ для стрелочки */
+      padding-right: 30px;
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
     }
-    /* Только для textarea */
     textarea {
-      resize: none; /* Чтобы нельзя было растягивать */
-    }
-    .hidden {
-      display: none;
+      resize: none;
+      min-height: 100px;
+      height: auto;
     }
     .submit-btn {
       margin-top: 10px;
@@ -90,7 +92,6 @@
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      height: auto;
     }
     .submit-btn:hover {
       background-color: #142850;
@@ -232,7 +233,6 @@ function toggleCustomInput(selectElement, inputId) {
   }
 }
 
-// Обработчик формы для показа благодарности
 const form = document.querySelector('form');
 const thankYouMessage = document.getElementById('thankYouMessage');
 form.addEventListener('submit', function(event) {
@@ -244,3 +244,4 @@ form.addEventListener('submit', function(event) {
 
 </body>
 </html>
+
