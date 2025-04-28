@@ -22,18 +22,26 @@
       margin-bottom: 10px;
     }
     header img {
-  max-width: 100%;
-  width: 500px;
-  height: auto;
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
     h1 {
       font-weight: 600;
       text-align: center;
       margin-top: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
     form {
       display: flex;
       flex-direction: column;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
     label {
       margin: 15px 0 5px;
@@ -71,6 +79,13 @@
     }
     .submit-btn:hover {
       opacity: 0.9;
+    }
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 24px;
+      color: green;
     }
     @media (max-width: 600px) {
       input, select, textarea {
@@ -185,6 +200,8 @@
 
     <button class="submit-btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
   </form>
+
+  <div id="thankYouMessage">Спасибо за заявку!</div>
 </div>
 
 <script>
@@ -198,6 +215,35 @@ function toggleCustomInput(selectElement, inputId) {
     input.required = false;
   }
 }
+
+// Показать сообщение спасибо
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const thankYouMessage = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    thankYouMessage.style.display = 'block';
+
+    setTimeout(function() {
+      thankYouMessage.style.display = 'none';
+      form.reset();
+    }, 5000);
+  });
+
+  // Анимация появления элементов при скролле
+  const h1 = document.querySelector('h1');
+  const formBlock = document.querySelector('form');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      h1.style.opacity = '1';
+      h1.style.transform = 'translateY(0)';
+      formBlock.style.opacity = '1';
+      formBlock.style.transform = 'translateY(0)';
+    }
+  });
+});
 </script>
 
 </body>
