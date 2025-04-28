@@ -112,17 +112,21 @@
     }
     @media (max-width: 600px) {
       .container {
-        padding: 0 10px;
+        padding: 0 5px;
+      }
+      header {
+        margin-bottom: 10px;
       }
       header img {
-        width: 95vw;
-        max-width: 95vw;
+        width: 98vw;
+        max-width: 98vw;
+        margin-top: 5px;
       }
       .subtitle {
         font-size: 14px;
         padding: 10px 12px;
-        margin-top: 8px;
-        margin-bottom: 20px;
+        margin-top: 0;
+        margin-bottom: 15px;
         line-height: 1.35;
       }
       input, select, textarea {
@@ -168,7 +172,7 @@
 
     <label>Опыт работы на других площадках</label>
     <small>Перечислите платформы через запятую.</small>
-    <textarea placeholder="Пример: Площадка 1, Площадка 2 и т.д." required></textarea>
+    <textarea placeholder="Пример: Binance, OKX, Exmo" required></textarea>
 
     <label>Команда работает 24/7 *</label>
     <select onchange="toggleCustomInput(this, 'customWork')" required>
