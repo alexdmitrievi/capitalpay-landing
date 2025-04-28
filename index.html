@@ -18,20 +18,12 @@
             margin: auto;
         }
         header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
+            text-align: center;
             margin-bottom: 30px;
         }
         header img {
-            width: 180px;
+            width: 200px;
             height: auto;
-        }
-        header .logo-text {
-            font-size: 32px;
-            font-weight: 700;
-            color: #0A1E3D;
         }
         h1, h2 {
             font-weight: 600;
@@ -82,19 +74,37 @@
             input, select, textarea {
                 width: 100%;
             }
-            header {
-                flex-direction: column;
-            }
-            header img {
-                width: 140px;
-            }
-            header .logo-text {
-                font-size: 24px;
-            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <img src="logo_final.svg" alt="CapitalPay">
+        </header>
+
+        <h1>Анкета CapitalPay</h1>
+        <p style="text-align: center;">Пожалуйста, укажите всю запрашиваемую информацию — это займёт всего несколько минут. Ваши ответы помогут нам лучше понять ваши возможности и быстрее включить вас в работу.</p>
+
+        <form>
+            <!-- Поля формы здесь -->
+        </form>
+    </div>
+
+    <script>
+        function toggleCustomInput(selectElement, inputId) {
+            const input = document.getElementById(inputId);
+            if (selectElement.value === 'custom') {
+                input.classList.remove('hidden');
+                input.required = true;
+            } else {
+                input.classList.add('hidden');
+                input.required = false;
+            }
+        }
+    </script>
+</body>
+    
     <div class="container">
         <header>
             <img src="logo.svg" alt="CapitalPay">
