@@ -18,11 +18,20 @@
             margin: auto;
         }
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
             margin-bottom: 30px;
         }
         header img {
             max-width: 200px;
+            height: auto;
+        }
+        header .logo-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0A1E3D;
         }
         h1, h2 {
             font-weight: 600;
@@ -72,14 +81,17 @@
             input, select, textarea {
                 width: 100%;
             }
+            header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- Место для картинки или гифки -->
-            <img src="logo-placeholder.png" alt="CapitalPay">
+            <img src="logo.svg" alt="CapitalPay">
+            <div class="logo-text">CapitalPay</div>
         </header>
 
         <h1>Анкета CapitalPay</h1>
