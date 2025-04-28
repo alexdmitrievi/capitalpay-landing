@@ -54,7 +54,7 @@
       color: #555;
       font-size: 13px;
     }
-    input, select, textarea {
+    input, textarea {
       padding: 12px;
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
@@ -65,6 +65,22 @@
       box-sizing: border-box;
       height: 48px;
     }
+    select {
+      padding: 12px;
+      padding-right: 30px; /* отступ для стрелочки */
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      width: 100%;
+      box-sizing: border-box;
+      height: 48px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    /* Только для textarea добавляем индивидуальные правки */
     textarea {
       resize: vertical;
       min-height: 100px;
