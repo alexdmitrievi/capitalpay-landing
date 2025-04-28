@@ -32,7 +32,13 @@
     h1 {
       font-weight: 600;
       text-align: center;
-      margin: 20px 0;
+      margin: 20px 0 10px 0;
+    }
+    p.subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
     }
     form {
       display: flex;
@@ -80,6 +86,14 @@
     .submit-btn:hover {
       background-color: #142850;
     }
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 22px;
+      color: green;
+      font-weight: 600;
+    }
     @media (max-width: 600px) {
       header img {
         width: 280px;
@@ -95,6 +109,7 @@
   </header>
 
   <h1>Анкета</h1>
+  <p class="subtitle">Ответьте на несколько вопросов — это поможет нам быстрее запустить вашу команду в работу.</p>
 
   <form>
     <label>Название команды</label>
@@ -191,6 +206,8 @@
 
     <button class="submit-btn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
   </form>
+
+  <div id="thankYouMessage">Спасибо за заявку!</div>
 </div>
 
 <script>
@@ -205,6 +222,15 @@ function toggleCustomInput(selectElement, inputId) {
     input.value = '';
   }
 }
+
+// Обработчик формы для показа благодарности
+const form = document.querySelector('form');
+const thankYouMessage = document.getElementById('thankYouMessage');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  form.style.display = 'none';
+  thankYouMessage.style.display = 'block';
+});
 </script>
 
 </body>
