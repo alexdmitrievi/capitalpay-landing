@@ -29,9 +29,13 @@
       display: block;
       margin: 0 auto;
     }
-    p.subtitle {
+    .subtitle-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .subtitle {
       text-align: center;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500;
       color: #0A1E3D;
       background-color: #f1f5f9;
@@ -46,7 +50,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      max-width: 800px;
+      max-width: 600px;
       margin: 0 auto;
     }
     label {
@@ -107,12 +111,15 @@
       font-weight: 600;
     }
     @media (max-width: 600px) {
+      .container {
+        padding: 0 10px;
+      }
       header img {
         width: 90vw;
         max-width: 90vw;
       }
-      p.subtitle {
-        font-size: 16px;
+      .subtitle {
+        font-size: 14px;
         padding: 10px 12px;
         margin-top: 8px;
         margin-bottom: 20px;
@@ -134,7 +141,9 @@
     <img src="logo_final_clean.svg" alt="CapitalPay">
   </header>
 
-  <p class="subtitle">Ответьте на несколько вопросов — это поможет нам быстрее запустить вашу команду в работу.</p>
+  <div class="subtitle-container">
+    <p class="subtitle">Ответьте на несколько вопросов — это поможет нам быстрее запустить вашу команду в работу.</p>
+  </div>
 
   <form>
     <label>Название команды</label>
