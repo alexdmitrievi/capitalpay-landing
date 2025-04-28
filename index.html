@@ -29,7 +29,6 @@
       display: block;
       margin: 0 auto;
     }
-/* Можно вообще убрать @media для header img */
     p.subtitle {
       text-align: center;
       font-size: 18px;
@@ -47,6 +46,8 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
     }
     label {
       font-weight: 600;
@@ -105,6 +106,11 @@
       color: green;
       font-weight: 600;
     }
+    @media (max-width: 600px) {
+      header img {
+        width: 90vw;
+        max-width: 90vw;
+      }
       p.subtitle {
         font-size: 16px;
         padding: 10px 12px;
@@ -153,7 +159,7 @@
 
     <label>Опыт работы на других площадках</label>
     <small>Перечислите платформы через запятую.</small>
-    <textarea placeholder="Пример: Площадка 1, Площадка 2 и т.д" required></textarea>
+    <textarea placeholder="Пример: Binance, OKX, Exmo" required></textarea>
 
     <label>Команда работает 24/7 *</label>
     <select onchange="toggleCustomInput(this, 'customWork')" required>
@@ -253,4 +259,3 @@ form.addEventListener('submit', function(event) {
 
 </body>
 </html>
-
